@@ -9,7 +9,6 @@ import org.slf4j.Logger;
 @Mod(CatastropheTweaks.MODID)
 public class CatastropheTweaks {
     public static final String MODID = "cat_tweaks";
-    private static final Logger LOGGER = LogUtils.getLogger();
 
     public CatastropheTweaks(ModContainer modContainer) {
         modContainer.registerConfig(ModConfig.Type.COMMON, CatastropheConfigs.SPEC);
