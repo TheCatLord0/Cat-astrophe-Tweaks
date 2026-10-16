@@ -27,7 +27,47 @@ sourceSets.main.resources {
 }
 
 repositories {
-    // Add here additional repositories if required by some of the dependencies below.
+    maven {
+        name = "Iron's Maven - Release"
+        url = "https://code.redspace.io/releases"
+    }
+    maven {
+        name = "Jared"
+        url 'https://maven.blamejared.com' }
+    maven {
+        name = "Illusive Soulworks maven"
+        url = "https://maven.theillusivec4.top/"
+    }
+    maven {
+        name = 'GeckoLib'
+        url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+        content {
+            includeGroupByRegex("software\\.bernie.*")
+            includeGroup("com.eliotlash.mclib")
+        }
+    }
+    maven { url 'https://modmaven.dev/' }
+    maven {
+        name = 'Forge'
+        url = "https://maven.minecraftforge.net"
+    }
+    maven {
+        name = 'TerraformersMC'
+        url = 'https://maven.terraformersmc.com/'
+        content {
+            includeGroup 'dev.emi'
+        }
+    }
+    exclusiveContent {
+        forRepository {
+            maven {
+                url "https://cursemaven.com"
+            }
+        }
+        filter {
+            includeGroup "curse.maven"
+        }
+    }
 }
 
 base {
@@ -116,27 +156,20 @@ configurations {
 }
 
 dependencies {
-    // Example optional mod dependency with JEI
-    // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
-    // compileOnly "mezz.jei:jei-${mc_version}-common-api:${jei_version}"
-    // compileOnly "mezz.jei:jei-${mc_version}-neoforge-api:${jei_version}"
-    // We add the full version to localRuntime, not runtimeOnly, so that we do not publish a dependency on it
-    // localRuntime "mezz.jei:jei-${mc_version}-neoforge:${jei_version}"
+    // Irons Spells and Spellbooks
+    implementation "io.redspace:irons_spellbooks:${irons_spells_version}"
+    // Irons Patreon Lib
+    implementation "io.redspace:irons_lib:${irons_lib_version}"
+    // Ars Nouveau
+    implementation "com.hollingsworth.ars_nouveau:ars_nouveau-${minecraft_version}:${ars_nouveau_version}"
 
-    // Example mod dependency using a mod jar from ./libs with a flat dir repository
-    // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
-    // The group id is ignored when searching -- in this case, it is "blank"
-    // implementation "blank:coolmod-${mc_version}:${coolmod_version}"
+    implementation("com.alexthw.ars_elemental:ars_elemental-${minecraft_version}:${ars_elemental_version}") {transitive = false}
+    implementation("com.alexthw.sauce:sauce-${minecraft_version}:${sauce_lib_version}") {transitive = false}
 
-    // Example mod dependency using a file as dependency
-    // implementation files("libs/coolmod-${mc_version}-${coolmod_version}.jar")
-
-    // Example project dependency using a sister or child project:
-    // implementation project(":myproject")
-
-    // For more info:
-    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
-    // http://www.gradle.org/docs/current/userguide/dependency_management.html
+    // Mekanism
+    compileOnly "mekanism:Mekanism:${minecraft_version}-${mekanism_version}:api"
+    // Curios
+    implementation "top.theillusivec4.curios:curios-neoforge:${curios_version}+${minecraft_version}"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

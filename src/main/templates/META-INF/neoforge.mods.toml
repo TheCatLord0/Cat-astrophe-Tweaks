@@ -50,8 +50,8 @@ Generalized Tweaks for various mods for All The Cat-astrophe packs.
 '''
 
 # The [[mixins]] block allows you to declare your mixin config to FML so that it gets loaded.
-#[[mixins]]
-#config="${mod_id}.mixins.json"
+[[mixins]]
+config = "cat_tweaks.mixins.json"
 
 # The [[accessTransformers]] block allows you to declare where your AT file is.
 # If this block is omitted, a fallback attempt will be made to load an AT from META-INF/accesstransformer.cfg
@@ -85,6 +85,19 @@ Generalized Tweaks for various mods for All The Cat-astrophe packs.
     versionRange="${minecraft_version_range}"
     ordering="NONE"
     side="BOTH"
+
+[[dependencies.${ mod_id }]]
+modId = "irons_spellbooks"
+type = "optional"
+versionRange = "1.21.1-3.16.3"
+ordering = "AFTER"
+side = "BOTH"
+[[dependencies.${ mod_id }]]
+modId = "irons_lib"
+type = "optional"
+versionRange = "1.21.1-2.2.0"
+ordering = "AFTER"
+side = "BOTH"
 
 # Features are specific properties of the game environment, that you may want to declare you require. This example declares
 # that your mod requires GL version 3.2 or higher. Other features will be added. They are side aware so declaring this won't

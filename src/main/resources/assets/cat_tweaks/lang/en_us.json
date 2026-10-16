@@ -1,9 +1,9 @@
 {
-  "cat_tweaks.configuration.title": "Cat-astrophe Tweaks Configs",
-  "cat_tweaks.configuration.section.cat_tweaks.common.toml": "Cat-astrophe Tweaks Configs",
-  "cat_tweaks.configuration.section.cat_tweaks.common.toml.title": "Cat-astrophe Tweaks Configs",
-  "cat_tweaks.configuration.items": "Item List",
-  "cat_tweaks.configuration.logDirtBlock": "Log Dirt Block",
-  "cat_tweaks.configuration.magicNumberIntroduction": "Magic Number Text",
-  "cat_tweaks.configuration.magicNumber": "Magic Number"
+  "configuration.cat_tweaks.osp": "One-shot Protection Settings",
+  "configuration.cat_tweaks.bdc": "Boss Damage Cap Settings",
+  "configuration.cat_tweaks.grace": "Grace Settings",
+  "configuration.cat_tweaks.mobs": "Mob Attribute Settings",
+  "configuration.cat_tweaks.items": "Items Settings",
+  "attribute.cat_tweaks.unbreaking": "Unbreaking",
+  "effect.cat_tweaks.grace": "Grace"
 }
