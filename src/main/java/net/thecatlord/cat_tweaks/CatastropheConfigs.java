@@ -21,7 +21,7 @@ public class CatastropheConfigs {
 
     public static final ModConfigSpec.IntValue skeletonHealth;
     public static final ModConfigSpec.DoubleValue skeletonDodge;
-    public static final ModConfigSpec.DoubleValue zombieArmorPierce;
+    public static final ModConfigSpec.IntValue zombieArmorPierce;
     public static final ModConfigSpec.DoubleValue spiderDodge;
 
     public static final ModConfigSpec.DoubleValue bossResistance;
@@ -101,7 +101,7 @@ public class CatastropheConfigs {
         zombieArmorPierce = BUILDER
                 .translation("Zombie Armor Pierce")
                 .comment("The amount of Armor Pierce a zombie has.")
-                .defineInRange("zombie_armor_pierce", 0.2, 0, Integer.MAX_VALUE);
+                .defineInRange("zombie_armor_pierce", 2 , 0, Integer.MAX_VALUE);
         spiderDodge = BUILDER
                 .translation("Spider Dodge Chance")
                 .comment("The chance a Spider dodges an attack.")
@@ -131,11 +131,11 @@ public class CatastropheConfigs {
         stabilizedWarpCooldown = BUILDER
                 .translation("Stabilized Warpscroll Cooldown")
                 .comment("How long should Stabilized Warpscroll be on cooldown after warp?.")
-                .defineInRange("stabilized_warpscroll_cooldown", 10, 0, Integer.MAX_VALUE);
+                .defineInRange("stabilized_warpscroll_cooldown", 10, 0, 107374182);
         warpScrollCooldown = BUILDER
                 .translation("Warpscroll Cooldown")
                 .comment("How long should Warpscroll be on cooldown after warp?.")
-                .defineInRange("warpscroll_cooldown", 5, 0, Integer.MAX_VALUE);
+                .defineInRange("warpscroll_cooldown", 5, 0, 107374182);
         portableTeleporterCooldown = BUILDER
                 .translation("Portable Teleporter Cooldown")
                 .comment("How long should Portable Teleporter be on cooldown after teleport?.")
@@ -145,6 +145,15 @@ public class CatastropheConfigs {
     static {
         BUILDER.pop();
     }
+    public static final ModConfigSpec.BooleanValue fireworkPlayer = BUILDER
+            .translation("Firework Glyph Nerf")
+            .comment("Should Firework Glyph work on players?")
+                .define("firework_glyph_players", true);
+    public static final ModConfigSpec.BooleanValue blinkWarpNerf = BUILDER
+            .translation("Blink Glyph Nerf")
+            .comment("Should Blink Glyph not be able to teleport players while holding a warpscroll?")
+                .define("blink_glyph_players", true);
+
 
     static final ModConfigSpec SPEC = BUILDER.build();
 

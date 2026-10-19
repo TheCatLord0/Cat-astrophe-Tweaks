@@ -36,7 +36,7 @@ displayName="${mod_name}" #mandatory
 #displayURL="Wha" #optional
 
 # A file name (in the root of the mod JAR) containing a logo for display
-#logoFile="examplemod.png" #optional
+logoFile="cat_tweaks.png" #optional
 
 # A text field displayed in the mod UI
 #credits="" #optional
@@ -52,6 +52,14 @@ Generalized Tweaks for various mods for All The Cat-astrophe packs.
 # The [[mixins]] block allows you to declare your mixin config to FML so that it gets loaded.
 [[mixins]]
 config = "cat_tweaks.mixins.json"
+
+[[mixins]]
+config = "cat_tweaks.irons.mixins.json"
+requiredMods = ["irons_spellbooks"]
+
+[[mixins]]
+config = "cat_tweaks.ars.mixins.json"
+requiredMods = ["ars_nouveau"]
 
 # The [[accessTransformers]] block allows you to declare where your AT file is.
 # If this block is omitted, a fallback attempt will be made to load an AT from META-INF/accesstransformer.cfg
@@ -96,6 +104,30 @@ side = "BOTH"
 modId = "irons_lib"
 type = "optional"
 versionRange = "1.21.1-2.2.0"
+ordering = "AFTER"
+side = "BOTH"
+[[dependencies.${ mod_id }]]
+modId = "ars_nouveau"
+type = "optional"
+versionRange = "1.21.1-5.13.3.1423"
+ordering = "AFTER"
+side = "BOTH"
+[[dependencies.${ mod_id }]]
+modId = "ars_elemental"
+type = "optional"
+versionRange = "1.21.1-0.7.10.4.189"
+ordering = "AFTER"
+side = "BOTH"
+[[dependencies.${ mod_id }]]
+modId = "mekanism"
+type = "optional"
+versionRange = "1.21.1-10.7.9.72"
+ordering = "AFTER"
+side = "BOTH"
+[[dependencies.${ mod_id }]]
+modId = "malum"
+type = "optional"
+versionRange = "1.21.1-1.9.0"
 ordering = "AFTER"
 side = "BOTH"
 

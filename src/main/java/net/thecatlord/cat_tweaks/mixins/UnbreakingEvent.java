@@ -16,13 +16,11 @@ public abstract class UnbreakingEvent {
             at = @At("HEAD"),
             cancellable = true)
     public void noDurabilityLoss(int amount, LivingEntity entity, EquipmentSlot slot, CallbackInfo ci) {
-        if (entity instanceof Player player) {
-            var attribute = player.getAttribute(ModAttributes.UNBREAKING_ATTRIBUTE);
+            var attribute = entity.getAttribute(ModAttributes.UNBREAKING_ATTRIBUTE);
             if (attribute == null) return;
             double chance = attribute.getValue();
             if (Math.random() < chance) {
                 ci.cancel();
-            }
         }
     }
 }

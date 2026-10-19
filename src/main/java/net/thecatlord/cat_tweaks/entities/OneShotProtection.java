@@ -38,7 +38,7 @@ public class OneShotProtection {
         if (now < cooldownEnd) return;
 
         if (player.getHealth() < player.getMaxHealth() * threshold) return;
-        if (player.getHealth() > event.getNewDamage()) return;
+        if (player.getAbsorptionAmount() + player.getHealth() > event.getNewDamage()) return;
         Cooldown.put(player.getUUID(), now + (CatastropheConfigs.oneShotProtectionCooldown.getAsInt() * 20L));
         event.setNewDamage(0);
         player.setHealth(player.getMaxHealth() * 0.1f);

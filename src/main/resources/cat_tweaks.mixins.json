@@ -4,8 +4,6 @@
   "package": "net.thecatlord.cat_tweaks.mixins",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "UnbreakingEvent",
-    "TeleportationAmulet",
-    "WarpScrollCooldowns"
+    "UnbreakingEvent"
   ]
 }

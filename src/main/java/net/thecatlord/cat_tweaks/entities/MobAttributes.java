@@ -9,6 +9,7 @@ import net.minecraft.world.entity.monster.Spider;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.fml.ModList;
+import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
@@ -17,11 +18,9 @@ import net.thecatlord.cat_tweaks.CatastropheConfigs;
 public class MobAttributes {
     public static void mobModification(EntityJoinLevelEvent event) {
         if (event.getLevel().isClientSide()) return;
-        if (!(ModList.get().isLoaded("sauce"))) return;
+
         if (!(event.getEntity() instanceof LivingEntity entity)) return;
 
-        var dodgeAttribute = entity.getAttribute(IronsLibRegistries.AttributeRegistry.DODGE_CHANCE);
-        var armorPiercingAttribute = entity.getAttribute(IronsLibRegistries.AttributeRegistry.ARMOR_PIERCE);
         var healthAttribute = entity.getAttribute(Attributes.MAX_HEALTH);
 
         double dodge;
@@ -30,15 +29,24 @@ public class MobAttributes {
 
         if (entity instanceof Skeleton) {
             health = CatastropheConfigs.skeletonHealth.getAsInt();
-            dodge = CatastropheConfigs.skeletonDodge.getAsDouble();
             healthAttribute.setBaseValue(health);
+            if (ModList.get().isLoaded("irons_lib")) {
+                var dodgeAttribute = entity.getAttribute(IronsLibRegistries.AttributeRegistry.DODGE_CHANCE);
+                dodge = CatastropheConfigs.skeletonDodge.getAsDouble();
+                dodgeAttribute.setBaseValue(dodge);
+            }
         } else if (entity instanceof Zombie) {
-            pierce = CatastropheConfigs.zombieArmorPierce.getAsDouble();
-            armorPiercingAttribute.setBaseValue(pierce);
+            if (ModList.get().isLoaded("irons_lib")) {
+                var armorPiercingAttribute = entity.getAttribute(IronsLibRegistries.AttributeRegistry.ARMOR_PIERCE);
+                pierce = CatastropheConfigs.zombieArmorPierce.getAsInt();
+                armorPiercingAttribute.setBaseValue(pierce);
+            }
         } else if (entity instanceof Spider) {
-            dodge = CatastropheConfigs.spiderDodge.getAsDouble();
-            dodgeAttribute.setBaseValue(dodge);
-        } else {
+                if (ModList.get().isLoaded("irons_lib")) {
+                    var dodgeAttribute = entity.getAttribute(IronsLibRegistries.AttributeRegistry.DODGE_CHANCE);
+                    dodge = CatastropheConfigs.spiderDodge.getAsDouble();
+                    dodgeAttribute.setBaseValue(dodge);
+                }
         }
     }
 

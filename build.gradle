@@ -39,6 +39,10 @@ repositories {
         url = "https://maven.theillusivec4.top/"
     }
     maven {
+        name = "Progwml6's maven"
+        url = "https://dvs1.progwml6.com/files/maven/"
+    }
+    maven {
         name = 'GeckoLib'
         url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
         content {
@@ -170,6 +174,9 @@ dependencies {
     compileOnly "mekanism:Mekanism:${minecraft_version}-${mekanism_version}:api"
     // Curios
     implementation "top.theillusivec4.curios:curios-neoforge:${curios_version}+${minecraft_version}"
+    // Malum
+    implementation "curse.maven:malum-484064:7307339"
+    implementation "curse.maven:lodestone-616457:7264731"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

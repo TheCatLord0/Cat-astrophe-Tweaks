@@ -5,5 +5,29 @@
   "configuration.cat_tweaks.mobs": "Mob Attribute Settings",
   "configuration.cat_tweaks.items": "Items Settings",
   "attribute.cat_tweaks.unbreaking": "Unbreaking",
-  "effect.cat_tweaks.grace": "Grace"
+  "effect.cat_tweaks.grace": "Grace",
+
+  "effect.cat_tweaks.instant_soulward": "Instant Soulward",
+  "item.minecraft.potion.effect.instant_soulward_lv1": "Potion of Instant Soulward",
+  "item.minecraft.potion.effect.instant_soulward_lv2": "Potion of Instant Soulward",
+  "item.minecraft.potion.effect.instant_soulward_lv3": "Potion of Instant Soulward",
+  "item.minecraft.splash_potion.effect.instant_soulward_lv1": "Splash Potion of Instant Soulward",
+  "item.minecraft.splash_potion.effect.instant_soulward_lv2": "Splash Potion of Instant Soulward",
+  "item.minecraft.splash_potion.effect.instant_soulward_lv3": "Splash Potion of Instant Soulward",
+  "item.minecraft.lingering_potion.effect.instant_soulward_lv1": "Lingering Potion of Instant Soulward",
+  "item.minecraft.lingering_potion.effect.instant_soulward_lv2": "Lingering Potion of Instant Soulward",
+  "item.minecraft.lingering_potion.effect.instant_soulward_lv3": "Lingering Potion of Instant Soulward",
+  "effect.cat_tweaks.instant_soulward.description": "Restores %s Soulward + %s%% of Soulward",
+
+  "effect.cat_tweaks.instant_mana": "Instant Mana (Ars)",
+  "item.minecraft.potion.effect.instant_mana_lv1": "Potion of Instant Mana (Ars)",
+  "item.minecraft.potion.effect.instant_mana_lv2": "Potion of Instant Mana (Ars)",
+  "item.minecraft.potion.effect.instant_mana_lv3": "Potion of Instant Mana (Ars)",
+  "item.minecraft.splash_potion.effect.instant_mana_lv1": "Splash Potion of Instant Mana (Ars)",
+  "item.minecraft.splash_potion.effect.instant_mana_lv2": "Splash Potion of Instant Mana (Ars)",
+  "item.minecraft.splash_potion.effect.instant_mana_lv3": "Splash Potion of Instant Mana (Ars)",
+  "item.minecraft.lingering_potion.effect.instant_mana_lv1": "Lingering Potion of Instant Mana (Ars)",
+  "item.minecraft.lingering_potion.effect.instant_mana_lv2": "Lingering Potion of Instant Mana (Ars)",
+  "item.minecraft.lingering_potion.effect.instant_mana_lv3": "Lingering Potion of Instant Mana (Ars)",
+  "effect.cat_tweaks.instant_mana.description": "Restores %s Mana (Ars) + %s%% of Mana (Ars)"
 }
